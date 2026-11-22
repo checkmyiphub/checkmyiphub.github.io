@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>What Is My IP Address? — WhatIsMyIPHub</title>
+    <meta name="description" content="Instantly see your real public IP address, location, ISP and timezone. Free IP lookup tool plus plain-English guides on IP addresses, IPv4 vs IPv6, VPNs and IP geolocation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhatIsMyIPHub" />
+    <meta property="og:title" content="What Is My IP Address? — WhatIsMyIPHub" />
+    <meta property="og:description" content="See your real public IP address, city, country, ISP and timezone in one click, and learn how IP addresses work in plain English." />
+    <meta property="og:url" content="https://checkmyiphub.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="What Is My IP Address? — WhatIsMyIPHub" />
+    <meta name="twitter:description" content="Free tool to check your public IP address, location, ISP and timezone, with simple guides that explain how IP addresses work." />
+    <link rel="canonical" href="https://checkmyiphub.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "WhatIsMyIPHub",
+          "url": "https://checkmyiphub.github.io/"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "What Is My IP — IP Address Lookup Tool",
+          "url": "https://checkmyiphub.github.io/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "A free tool that shows your real public IP address, approximate location, internet service provider and timezone, detected live in your browser."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is my IP address?", "acceptedAnswer": { "@type": "Answer", "text": "Your IP address is the public number your internet connection uses to communicate with websites and online services. The tool at the top of this page shows your current public IP address the moment the page loads, along with your approximate location and internet provider." } },
+            { "@type": "Question", "name": "Is my IP address permanent?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not. Most home connections use a dynamic IP address that your provider can change at any time, for example when your router restarts or its lease expires. A static IP address, which never changes, is normally a paid extra aimed at businesses." } },
+            { "@type": "Question", "name": "Can someone find my exact home address from my IP address?", "acceptedAnswer": { "@type": "Answer", "text": "No. An IP address can usually be traced to a country and often a city or district, but it does not reveal your street address, your name or who you are. Only your internet provider can match an IP address to a customer account, and it only does so for valid legal requests." } },
+            { "@type": "Question", "name": "What is the difference between a public and a private IP address?", "acceptedAnswer": { "@type": "Answer", "text": "Your public IP address is the one the internet sees; it belongs to your router or connection and is shared by every device in your home. Private IP addresses are used inside your home network so your router can tell your phone, laptop and TV apart. Private addresses are not reachable from the internet." } },
+            { "@type": "Question", "name": "Does my IP address change when I travel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your IP address belongs to the network you are connected to, not to your device. Connect from a hotel, a café or another country and you will get a different IP address from that network's provider." } },
+            { "@type": "Question", "name": "Can two devices share the same IP address?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it happens in almost every home. All of your devices share one public IP address through your router, which translates between that address and each device's private address. This technique is called NAT." } },
+            { "@type": "Question", "name": "What is IPv6, and do I have it?", "acceptedAnswer": { "@type": "Answer", "text": "IPv6 is the newer version of the IP address system, created because the older IPv4 ran out of room. IPv6 addresses are longer and written in hexadecimal. Many providers now give customers both an IPv4 and an IPv6 address; if your connection has IPv6, this tool will show it." } },
+            { "@type": "Question", "name": "Does a VPN really hide my IP address?", "acceptedAnswer": { "@type": "Answer", "text": "From the websites you visit, yes. When a VPN is connected, websites see the VPN server's IP address instead of yours. Your own provider can still see that you are connected to a VPN, though not which sites you visit through it." } },
+            { "@type": "Question", "name": "Why does a website show me in the wrong city?", "acceptedAnswer": { "@type": "Answer", "text": "IP location is an estimate based on databases that map address ranges to places. Your provider may route your connection through a hub in another city, or the database may be out of date, so the city shown can be tens or even hundreds of kilometres from where you actually are." } },
+            { "@type": "Question", "name": "Is it safe to share my IP address publicly?", "acceptedAnswer": { "@type": "Answer", "text": "An IP address on its own reveals little: a rough location and the name of your provider. Still, it is sensible not to post it publicly, because it can be used to target your connection with unwanted traffic. If you ever need a fresh one, restarting your router will usually get you a different address." } }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      :root {
+        --bg: #fcfcfb;
+        --ink: #1a2230;
+        --ink-soft: #45536a;
+        --accent: #0b5fa5;
+        --accent-ink: #0b5fa5;
+        --line: #dde3ea;
+        --panel: #f2f5f8;
+        --panel-line: #d5dde6;
+        --good: #177245;
+        --bad: #b3261e;
+        --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f141b;
+          --ink: #e9eef4;
+          --ink-soft: #a7b4c4;
+          --accent: #6db3f2;
+          --accent-ink: #8ec2f5;
+          --line: #26303d;
+          --panel: #161e28;
+          --panel-line: #2b3745;
+          --good: #4cc38a;
+          --bad: #f28b82;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+      a:hover { text-decoration-thickness: 2px; }
+      button { font-family: var(--sans); cursor: pointer; }
+
+      /* ---------- Header / nav ---------- */
+      .site-header {
+        border-bottom: 1px solid var(--line);
+        position: sticky; top: 0; z-index: 20;
+        background: var(--bg);
+      }
+      .header-in {
+        max-width: 880px; margin: 0 auto; padding: 0 20px;
+        display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        min-height: 56px;
+      }
+      .brand {
+        font-weight: 700; font-size: 1.05rem; color: var(--ink);
+        text-decoration: none; margin-right: auto; padding: 10px 4px;
+        letter-spacing: -0.01em;
+      }
+      .brand span { color: var(--accent); }
+      nav.main-nav { display: flex; flex-wrap: wrap; }
+      nav.main-nav a {
+        color: var(--ink-soft); text-decoration: none; font-size: 0.95rem;
+        padding: 10px 10px; min-height: 40px; display: inline-flex; align-items: center;
+      }
+      nav.main-nav a:hover { color: var(--ink); text-decoration: underline; }
+      nav.main-nav a.active { color: var(--accent-ink); font-weight: 600; }
+
+      /* ---------- Layout ---------- */
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px 64px; }
+      .page { display: none; }
+      .page.visible { display: block; }
+      h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 36px 0 10px; font-weight: 700; }
+      h2 { font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.01em; margin: 40px 0 10px; font-weight: 700; }
+      h3 { font-size: 1.08rem; margin: 28px 0 6px; font-weight: 600; }
+      p { margin: 0 0 16px; }
+      .lede { font-size: 1.12rem; color: var(--ink-soft); margin-bottom: 24px; }
+      ul, ol { margin: 0 0 16px; padding-left: 24px; }
+      li { margin-bottom: 6px; }
+      .small { font-size: 0.9rem; color: var(--ink-soft); }
+      code { font-family: var(--mono); font-size: 0.92em; background: var(--panel); padding: 1px 5px; border-radius: 4px; }
+
+      /* ---------- IP tool ---------- */
+      .tool {
+        background: var(--panel);
+        border: 1px solid var(--panel-line);
+        border-radius: 10px;
+        padding: 26px 24px 22px;
+        margin: 26px 0 8px;
+      }
+      .tool-label {
+        font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px;
+      }
+      .ip-big {
+        font-family: var(--mono); font-weight: 600;
+        font-size: clamp(1.55rem, 6.2vw, 2.6rem);
+        line-height: 1.25; letter-spacing: -0.01em;
+        word-break: break-all; margin: 0 0 4px;
+      }
+      .ip-version { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 18px; }
+      .tool-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+      .btn {
+        border: 1px solid var(--panel-line); background: var(--bg); color: var(--ink);
+        border-radius: 8px; padding: 10px 18px; font-size: 0.98rem; font-weight: 600;
+        min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
+      }
+      .btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+      .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      @media (prefers-color-scheme: dark) { .btn.primary { color: #0b1522; } }
+      .btn.primary:hover { opacity: 0.92; color: #fff; }
+      @media (prefers-color-scheme: dark) { .btn.primary:hover { color: #0b1522; } }
+      .copy-note { font-size: 0.9rem; color: var(--good); min-height: 1.4em; margin: 4px 0 0; }
+
+      .details { margin: 18px 0 0; }
+      .details .row {
+        display: flex; gap: 16px; padding: 9px 0;
+        border-top: 1px solid var(--panel-line);
+      }
+      .details dt {
+        flex: 0 0 168px; font-weight: 600; font-size: 0.95rem; color: var(--ink-soft);
+      }
+      .details dd { margin: 0; font-size: 1rem; word-break: break-word; }
+      .details dd.mono { font-family: var(--mono); font-size: 0.95rem; }
+      @media (max-width: 560px) {
+        .details .row { flex-direction: column; gap: 0; }
+        .details dt { flex-basis: auto; }
+      }
+
+      .tool-status { font-size: 1.02rem; color: var(--ink-soft); margin: 6px 0 14px; }
+      .tool-status.error { color: var(--bad); }
+      .spinner {
+        display: inline-block; width: 15px; height: 15px; margin-right: 8px;
+        border: 2px solid var(--panel-line); border-top-color: var(--accent);
+        border-radius: 50%; vertical-align: -2px;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .spinner { animation: none; }
+        html { scroll-behavior: auto; }
+      }
+
+      /* ---------- Article lists & FAQ ---------- */
+      .article-list { list-style: none; padding: 0; margin: 8px 0 24px; }
+      .article-list li { margin: 0 0 20px; }
+      .article-list a.title { font-size: 1.12rem; font-weight: 600; }
+      .article-list p { margin: 3px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+      details.faq {
+        border-top: 1px solid var(--line); padding: 4px 0;
+      }
+      details.faq:last-of-type { border-bottom: 1px solid var(--line); }
+      details.faq summary {
+        cursor: pointer; font-weight: 600; padding: 12px 4px; min-height: 44px;
+        display: flex; align-items: center;
+      }
+      details.faq summary:hover { color: var(--accent-ink); }
+      details.faq .a { padding: 0 4px 14px; color: var(--ink-soft); }
+      details.faq .a p:last-child { margin-bottom: 0; }
+
+      .crumb { font-size: 0.92rem; color: var(--ink-soft); margin: 28px 0 0; }
+      .article-meta { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 8px; }
+      .related { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 18px; }
+      .related h2 { margin-top: 0; font-size: 1.15rem; }
+      .related ul { margin-bottom: 0; }
+
+      footer {
+        border-top: 1px solid var(--line); margin-top: 24px;
+      }
+      .footer-in {
+        max-width: 880px; margin: 0 auto; padding: 26px 20px 40px;
+        display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline;
+      }
+      .footer-in nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-right: auto; }
+      .footer-in nav a { color: var(--ink-soft); font-size: 0.94rem; padding: 6px 2px; min-height: 36px; display: inline-flex; align-items: center; }
+      .footer-in .copy { font-size: 0.94rem; color: var(--ink-soft); margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-in">
+        <a class="brand" href="#/">WhatIsMyIP<span>Hub</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#/" data-nav="home">Home</a>
+          <a href="#/articles" data-nav="articles">Articles</a>
+          <a href="#/faq" data-nav="faq">FAQ</a>
+          <a href="#/about" data-nav="about">About</a>
+          <a href="#/contact" data-nav="contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrap">
+
+      <!-- ================= HOME ================= -->
+      <main class="page" id="page-home">
+        <h1>What is my IP address?</h1>
+        <p class="lede">Your public IP address, detected live from your own connection — no sign-up, nothing typed in. This is the address websites see when you visit them.</p>
+
+        <section class="tool" aria-label="Your IP address details">
+          <p class="tool-label">Your public IP address</p>
+          <div id="tool-loading">
+            <p class="tool-status"><span class="spinner" aria-hidden="true"></span>Detecting your IP address…</p>
+          </div>
+          <div id="tool-result" hidden>
+            <p class="ip-big" id="ip-main">—</p>
+            <p class="ip-version" id="ip-version"></p>
+            <div class="tool-actions">
+              <button class="btn primary" id="btn-copy" type="button">Copy IP address</button>
+              <button class="btn" id="btn-refresh" type="button">Refresh</button>
+            </div>
+            <p class="copy-note" id="copy-note" role="status" aria-live="polite"></p>
+            <dl class="details" id="ip-details"></dl>
+          </div>
+          <div id="tool-error" hidden>
+            <p class="tool-status error">We could not detect your IP address. The lookup services may be temporarily unreachable, or something on your network (such as a strict firewall or an ad blocker) is blocking them.</p>
+            <div class="tool-actions">
+              <button class="btn primary" id="btn-retry" type="button">Try again</button>
+            </div>
+          </div>
+        </section>
+        <p class="small">The lookup happens in your browser using public IP detection services. Your result is never stored by this site — there is no account and no database behind this page.</p>
+
+        <h2>Understanding your IP address</h2>
+        <p>Every connection to the internet needs an address so that data knows where to come back to. That address is your IP address, and if you have ever wondered exactly <a href="#/what-is-an-ip-address">what is an IP address</a> and why your devices need one, our beginner's guide explains it with a simple postal analogy and no jargon.</p>
+        <p>Your address will be in one of two formats. The older <a href="#/ipv4-vs-ipv6">IPv4 vs IPv6</a> guide walks through the difference between the two, why the world is slowly moving to the newer version, and how to tell which one your connection is using — the tool above labels yours automatically.</p>
+        <p>The location shown with your result is an estimate. Providers register their address ranges in large databases, and <a href="#/ip-geolocation-explained">how websites know your location from your IP</a> explains how those databases are built, why the city is sometimes wrong, and why an IP can never pinpoint your house.</p>
+        <p>If you would rather websites saw a different address, you have options. You can <a href="#/how-to-change-your-ip-address">change your IP address</a> in a few minutes with nothing more than your router, or <a href="#/what-is-a-vpn">hide your IP with a VPN</a>, which routes your traffic through a server elsewhere so sites see that server's address instead of yours. The VPN guide also covers what a VPN cannot hide, which matters just as much.</p>
+
+        <h2>Articles</h2>
+        <ul class="article-list">
+          <li>
+            <a class="title" href="#/what-is-an-ip-address">What Is an IP Address? A Simple Explanation</a>
+            <p>What an IP address is, why every device on the internet needs one, and the difference between public, private, dynamic and static addresses.</p>
+          </li>
+          <li>
+            <a class="title" href="#/ipv4-vs-ipv6">IPv4 vs IPv6: What Is the Difference?</a>
+            <p>Why there are two versions of IP addresses, how to recognise each one, and what the slow move to IPv6 means for your home connection.</p>
+          </li>
+          <li>
+            <a class="title" href="#/how-to-change-your-ip-address">How to Change Your IP Address</a>
+            <p>Five practical ways to get a new public IP address, from restarting your router to using a VPN — and when each method actually works.</p>
+          </li>
+          <li>
+            <a class="title" href="#/what-is-a-vpn">What Is a VPN and Does It Hide Your IP?</a>
+            <p>How a VPN works in plain English, what it hides and what it does not, and how to choose one without wasting money.</p>
+          </li>
+          <li>
+            <a class="title" href="#/ip-geolocation-explained">How Websites Know Your Location from Your IP</a>
+            <p>The databases behind IP location, why they are often right about your country but vague about your city, and what other signals websites use.</p>
+          </li>
+        </ul>
+        <p><a href="#/articles">Browse all articles →</a></p>
+
+        <h2>Frequently asked questions</h2>
+        <div id="faq-list-home"></div>
+        <p style="margin-top:18px"><a href="#/faq">See the full FAQ →</a></p>
+      </main>
+
+      <!-- ================= ARTICLES INDEX ================= -->
+      <main class="page" id="page-articles">
+        <h1>Articles</h1>
+        <p class="lede">Plain-English guides about IP addresses, privacy and how your connection really works. No jargon, no filler — each guide answers one question properly.</p>
+        <ul class="article-list">
+          <li>
+            <a class="title" href="#/what-is-an-ip-address">What Is an IP Address? A Simple Explanation</a>
+            <p>Start here if the term is new to you. Covers what an IP address does, the postal-address analogy, public vs private addresses, and why yours keeps changing.</p>
+          </li>
+          <li>
+            <a class="title" href="#/ipv4-vs-ipv6">IPv4 vs IPv6: What Is the Difference?</a>
+            <p>The two address formats side by side in plain words: how each looks, why IPv4 ran out of room, and why your connection may have both at once.</p>
+          </li>
+          <li>
+            <a class="title" href="#/how-to-change-your-ip-address">How to Change Your IP Address</a>
+            <p>Router restarts, release and renew, mobile data tricks, asking your provider, VPNs and proxies — what works, what does not, and what to check afterwards.</p>
+          </li>
+          <li>
+            <a class="title" href="#/what-is-a-vpn">What Is a VPN and Does It Hide Your IP?</a>
+            <p>An honest explanation of VPNs: the encrypted tunnel, the borrowed IP address, the things a VPN still cannot hide, and how free VPNs make their money.</p>
+          </li>
+          <li>
+            <a class="title" href="#/ip-geolocation-explained">How Websites Know Your Location from Your IP</a>
+            <p>How IP location databases are built, how accurate they really are, why the city is sometimes wrong, and the other ways sites work out where you are.</p>
+          </li>
+        </ul>
+        <p>New to all of this? Check <a href="#/">your own IP address</a> first, then read the guides with your real result in front of you — the examples will make much more sense.</p>
+      </main>
+
+      <!-- ================= ARTICLE 1 ================= -->
+      <main class="page" id="page-what-is-an-ip-address">
+        <p class="crumb"><a href="#/articles">Articles</a> / Basics</p>
+        <h1>What Is an IP Address? A Simple Explanation</h1>
+        <p class="article-meta">A beginner-friendly guide to the address every internet connection lives at.</p>
+
+        <p>An IP address is a number that identifies a connection on a network. "IP" stands for Internet Protocol, the set of rules computers use to send information to each other. Whenever you load a web page, watch a video or send a message, the data travels in small chunks called packets, and every packet carries the address it came from and the address it is going to. Without addresses, the replies would have nowhere to go.</p>
+
+        <h2>The postal analogy</h2>
+        <p>The easiest way to picture an IP address is as a postal address for your internet connection. When you order something from a shop, you give the shop your home address so the parcel can find its way back to you. Browsing the web works the same way: your request travels out with your IP address attached, the website reads it, and sends the page back to that address. The website does not know your name or your street — it just knows the number it has to reply to.</p>
+        <p>An IPv4 address looks like four numbers separated by dots, for example <code>203.0.113.47</code>. Each of the four numbers runs from 0 to 255. Newer IPv6 addresses are longer and mix numbers with letters, and the <a href="#/ipv4-vs-ipv6">IPv4 vs IPv6 comparison</a> explains why both formats exist.</p>
+
+        <h2>Public and private addresses</h2>
+        <p>Your home actually uses two kinds of IP address at once. The <strong>public IP address</strong> is the one the outside world sees. It belongs to your router and is assigned by your internet provider, and it is the address shown by the <a href="#/">tool on our homepage</a>. Every device in your house — phones, laptops, the TV — shares that single public address when it talks to the internet.</p>
+        <p>Behind the router, each device gets its own <strong>private IP address</strong>, usually something like <code>192.168.1.23</code>. These addresses only work inside your home network. They let the router keep track of which device asked for which web page, a translation job called NAT (Network Address Translation). Private addresses are never visible to websites, and the same private address can be reused in millions of homes without any conflict, because they never meet on the open internet.</p>
+
+        <h2>Who gives you your IP address?</h2>
+        <p>Your internet service provider (ISP) owns large blocks of addresses and lends one to your connection. The handover is automatic: when your router connects, a system called DHCP assigns it an available address along with a "lease" — a period of time for which the address is yours. When the lease runs out it is usually renewed with the same address, but nothing guarantees that, which leads to the next point.</p>
+
+        <h2>Dynamic vs static addresses</h2>
+        <p>Most home connections have a <strong>dynamic IP address</strong>: one that can change. Restart your router, leave it off for a while, or simply wait long enough, and your provider may hand you a different address from its pool. This is completely normal and nothing to worry about — nothing on the internet depends on your address staying the same.</p>
+        <p>A <strong>static IP address</strong> never changes. Businesses pay extra for one when they run servers, security cameras or remote-access systems that other people need to reach at a fixed location. If you are not running anything like that, a dynamic address is all you need, and it is what almost every home already has.</p>
+
+        <h2>What can someone learn from your IP address?</h2>
+        <p>Less than most people fear. An IP address can usually be matched to a country, a region and often a nearby city, because providers register their address blocks publicly. It also reveals the name of your provider. That process — estimating a location from an address — is covered in detail in our guide to <a href="#/ip-geolocation-explained">how websites know your location from your IP</a>.</p>
+        <p>What an IP address does <em>not</em> reveal is your name, your exact home address, your phone number or anything stored on your devices. Only your provider can connect an address to a customer account, and providers only do that for formal legal requests. Even so, an IP address is a piece of your online footprint, and plenty of people prefer to mask it — one common way is to <a href="#/what-is-a-vpn">hide your IP with a VPN</a>, and another is simply to <a href="#/how-to-change-your-ip-address">change your IP address</a> so the old one goes back into your provider's pool.</p>
+
+        <h2>The short version</h2>
+        <p>An IP address is the return address your connection stamps on everything it sends across the internet. Your router holds one public address that the whole household shares, each device keeps a private address indoors, and your provider can swap your public address at any time. If you have never seen yours, <a href="#/">check your IP address now</a> — it takes a second, and the guides on this site will make more sense with the real thing in front of you.</p>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="#/ipv4-vs-ipv6">IPv4 vs IPv6: What Is the Difference?</a></li>
+            <li><a href="#/how-to-change-your-ip-address">How to Change Your IP Address</a></li>
+            <li><a href="#/ip-geolocation-explained">How Websites Know Your Location from Your IP</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- ================= ARTICLE 2 ================= -->
+      <main class="page" id="page-ipv4-vs-ipv6">
+        <p class="crumb"><a href="#/articles">Articles</a> / Basics</p>
+        <h1>IPv4 vs IPv6: What Is the Difference?</h1>
+        <p class="article-meta">Two versions of the same idea — and why the internet needs both.</p>
+
+        <p>If you have checked <a href="#/">your IP address</a> and noticed it described as IPv4 or IPv6, you have met the two generations of internet addressing. They do the same job — giving a connection an address so data can find its way back — but they were designed decades apart, for very different sizes of internet. If the basic idea of an address is new to you, start with <a href="#/what-is-an-ip-address">what is an IP address</a> and come back here afterwards.</p>
+
+        <h2>IPv4: the original</h2>
+        <p>IPv4 dates from the early 1980s, when the internet was a research network and nobody imagined it would connect billions of phones. An IPv4 address is 32 bits long and written as four decimal numbers separated by dots, like <code>198.51.100.23</code>. That format allows about 4.3 billion unique addresses, which sounded like more than the world would ever need.</p>
+        <p>It was not. By the 2010s the free pool of IPv4 addresses had effectively run out. The internet kept growing anyway, largely thanks to NAT — the trick, explained in our <a href="#/what-is-an-ip-address">IP address basics guide</a>, that lets a whole household or office share one public IPv4 address. NAT bought time, but it is a workaround, not a cure.</p>
+
+        <h2>IPv6: the replacement with room to spare</h2>
+        <p>IPv6 addresses are 128 bits long and written in hexadecimal — numbers plus the letters a to f — in groups separated by colons, like <code>2001:db8:85a3::8a2e:370:7334</code>. The double colon is a shortcut that replaces a run of zero groups, which is why IPv6 addresses often look shorter than they really are.</p>
+        <p>The number of possible IPv6 addresses is so large it is hard to make meaningful: roughly 340 undecillion, or enough to give every atom on Earth its own allocation and still have addresses left over. Scarcity, by design, will never be a problem again. IPv6 also builds in useful extras, such as automatic address configuration (devices can set themselves up without a DHCP server) and more efficient routing for providers.</p>
+
+        <h2>The practical differences</h2>
+        <ul>
+          <li><strong>Format:</strong> IPv4 is four short decimal numbers; IPv6 is longer, hexadecimal, and uses colons.</li>
+          <li><strong>Supply:</strong> IPv4 is exhausted and recycled; IPv6 is effectively unlimited.</li>
+          <li><strong>NAT:</strong> IPv4 home networks almost always hide behind NAT. IPv6 was designed so every device can have its own public address, making NAT unnecessary — though routers still firewall traffic for safety.</li>
+          <li><strong>Speed:</strong> In everyday use there is no difference worth measuring. Some large networks see slightly better performance on IPv6 because routing is simpler, but your choice of provider matters far more.</li>
+          <li><strong>Privacy:</strong> Early IPv6 setups built part of the address from the device's hardware ID, which could track a device across networks. Modern systems use temporary, rotating IPv6 addresses instead, so this is largely a solved problem.</li>
+        </ul>
+
+        <h2>Why the changeover is taking so long</h2>
+        <p>The two versions cannot talk to each other directly — an IPv4-only device and an IPv6-only server are strangers without translation in between. Because of that, the internet is migrating gradually rather than switching on a single day. Most modern connections are "dual stack": your provider gives you an IPv4 address <em>and</em> an IPv6 address, and your devices quietly use whichever one each website supports. That is why the tool on this site shows your IPv6 address too, when your connection has one.</p>
+        <p>Providers, phone networks and big websites have been turning on IPv6 for years, and on mobile networks IPv6 traffic already exceeds IPv4 in many countries. The old version will not disappear soon — too much equipment depends on it — but every year a little more of the internet speaks the new language first.</p>
+
+        <h2>Does it matter to you?</h2>
+        <p>For everyday browsing, no. You do not need to choose, configure or even think about the version; your router and provider handle it. It is worth knowing which you have for two practical reasons. First, troubleshooting: some connection problems affect only one version, and knowing yours narrows things down. Second, privacy: masking your address with a tool that only covers IPv4 can leak your real IPv6 address alongside it — a trap our guide to <a href="#/what-is-a-vpn">what a VPN hides</a> explains. And if you want a different address altogether, the methods in <a href="#/how-to-change-your-ip-address">how to change your IP address</a> apply to both versions, though not always in the same way.</p>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="#/what-is-an-ip-address">What Is an IP Address? A Simple Explanation</a></li>
+            <li><a href="#/what-is-a-vpn">What Is a VPN and Does It Hide Your IP?</a></li>
+            <li><a href="#/how-to-change-your-ip-address">How to Change Your IP Address</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- ================= ARTICLE 3 ================= -->
+      <main class="page" id="page-how-to-change-your-ip-address">
+        <p class="crumb"><a href="#/articles">Articles</a> / How-to</p>
+        <h1>How to Change Your IP Address</h1>
+        <p class="article-meta">Five honest methods, what each one actually changes, and how to confirm it worked.</p>
+
+        <p>There are good ordinary reasons to want a new IP address: a website has mistakenly blocked yours, a game server has flagged it, you are troubleshooting a connection problem, or you simply do not want an old address linked to your activity any longer. The good news is that for most home connections, changing your public IP address is easy. First, note the address you have now on <a href="#/">our homepage tool</a>, so you can check afterwards whether it really changed.</p>
+
+        <h2>Before you start: public vs private</h2>
+        <p>"Change my IP address" almost always means the <strong>public</strong> address — the one websites see. Your devices also have private addresses inside your home network, and changing those does nothing for your visibility online. The difference is explained in <a href="#/what-is-an-ip-address">what is an IP address</a>. Every method below targets the public address.</p>
+
+        <h2>Method 1: Restart your router (and wait)</h2>
+        <p>Most home connections use dynamic addresses, handed out on a lease. When your router disconnects and reconnects, your provider may assign a different address from its pool. Turning the router off and on quickly often keeps the same address, because the lease is still valid. For a better chance, switch the router off and leave it off for a while — ten minutes helps, overnight is better — so the lease expires and the old address returns to the pool. This method is free and simple, but it is never guaranteed: some providers pin addresses for months.</p>
+
+        <h2>Method 2: Release and renew on your computer</h2>
+        <p>If your computer connects directly to a modem without a router, you can ask for a new address yourself. On Windows, open Command Prompt and run <code>ipconfig /release</code> followed by <code>ipconfig /renew</code>. On a Mac, open the network settings for your connection and click "Renew DHCP Lease". If a router sits between you and the modem — true for most homes — this only changes your private address, which websites never see, so use Method 1 instead.</p>
+
+        <h2>Method 3: Use mobile data, or toggle airplane mode</h2>
+        <p>Your phone gets its address from your mobile network, not your home provider, so switching from Wi-Fi to mobile data instantly gives you a different public IP. Toggling airplane mode on and off forces the phone to reconnect, and mobile networks frequently hand out a fresh address when that happens. This is the fastest trick when a site has blocked your phone's current address.</p>
+
+        <h2>Method 4: Ask your provider</h2>
+        <p>If restarts do not help, your provider's support line can sometimes change your address or tell you how long your lease runs. If you need an address that never changes — the opposite problem — that is a static IP, usually a paid add-on. Support can also confirm whether your connection uses IPv6, since the <a href="#/ipv4-vs-ipv6">IPv4 and IPv6 addresses</a> on a dual-stack connection may change independently.</p>
+
+        <h2>Method 5: Use a VPN or a proxy</h2>
+        <p>A VPN does not change the address your provider gave you — it hides it. Your traffic travels through the VPN provider's server, so websites see that server's address instead. The moment you disconnect, your real address is visible again. For many people that is exactly what they wanted, and it has the bonus of working instantly and letting you appear in another country. Our guide to <a href="#/what-is-a-vpn">what a VPN is and whether it hides your IP</a> explains the trade-offs honestly, including what a VPN cannot do. A web proxy does a similar job for a single app or browser, usually with weaker privacy and slower speeds.</p>
+
+        <h2>How to confirm the change worked</h2>
+        <p>Come back to the <a href="#/">IP checker on our homepage</a> and compare. If the address matches the one you noted before you started, the method did not work — the most common reason is a router restart that was too quick to expire the lease. Also check the location shown next to it: after a genuine change, the estimated city may shift slightly, because location is guessed from the address itself, as described in <a href="#/ip-geolocation-explained">how websites know your location from your IP</a>.</p>
+
+        <h2>A quick word of caution</h2>
+        <p>Changing your IP address is a normal thing to do, but it is not a cloak of invisibility. Websites recognise returning visitors through accounts and cookies as much as through addresses, and your provider always knows which address it assigned to you. Treat a new IP as a fresh start for troubleshooting and everyday privacy hygiene — not as anonymity.</p>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="#/what-is-a-vpn">What Is a VPN and Does It Hide Your IP?</a></li>
+            <li><a href="#/what-is-an-ip-address">What Is an IP Address? A Simple Explanation</a></li>
+            <li><a href="#/ipv4-vs-ipv6">IPv4 vs IPv6: What Is the Difference?</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- ================= ARTICLE 4 ================= -->
+      <main class="page" id="page-what-is-a-vpn">
+        <p class="crumb"><a href="#/articles">Articles</a> / Privacy</p>
+        <h1>What Is a VPN and Does It Hide Your IP?</h1>
+        <p class="article-meta">The honest version: what a VPN does, what it cannot do, and whether you need one.</p>
+
+        <p>VPN stands for Virtual Private Network. In plain terms, a VPN is an app that reroutes your internet traffic through a server run by the VPN company, inside an encrypted tunnel, before it reaches the websites you visit. That one detour changes two things at once: who can read your traffic along the way, and which IP address the websites at the other end get to see.</p>
+
+        <h2>How it works, step by step</h2>
+        <p>Without a VPN, your request goes from your router to your internet provider and on to the website, which replies to <a href="#/what-is-an-ip-address">your public IP address</a>. With a VPN connected, your device first builds an encrypted tunnel to the VPN server. Your requests travel through that tunnel, pop out at the server, and continue to the website from there. The website sees the VPN server's IP address and location — which could be in another country — and replies to it. Your provider, watching from the middle, can see that you are connected to a VPN, but the contents and destinations of your browsing are sealed inside the tunnel.</p>
+        <p>You can watch this happen: check <a href="#/">your IP address</a> with the VPN off, switch the VPN on, and refresh. The address, and usually the city and country, change. Switch the VPN off and your own address returns — the VPN borrowed you an address; it did not change yours, which is a different job described in <a href="#/how-to-change-your-ip-address">how to change your IP address</a>.</p>
+
+        <h2>So, does a VPN hide your IP?</h2>
+        <p>From websites, yes — that is the core of the product. A site you visit sees the VPN server's address, not yours, so it cannot use your address to estimate your real location or to recognise your household across visits. But "hide" has limits worth understanding:</p>
+        <ul>
+          <li><strong>Your provider still knows who you are.</strong> It assigned your real address and can see the tunnel exists; it just cannot see through it.</li>
+          <li><strong>The VPN company can see what your provider used to see.</strong> You are moving trust, not deleting it. This is why the provider's logging policy matters.</li>
+          <li><strong>Accounts and cookies still identify you.</strong> If you log into a site, it knows exactly who you are regardless of your IP address.</li>
+          <li><strong>Browser fingerprinting still works.</strong> Screen size, fonts, language and dozens of other signals can single out a browser even behind a VPN.</li>
+          <li><strong>Leaks can undo it.</strong> A badly configured VPN may let some traffic travel outside the tunnel, or handle only IPv4 while your <a href="#/ipv4-vs-ipv6">IPv6 address</a> goes out uncovered. A "kill switch" feature and IPv6 support are worth checking before you pay.</li>
+        </ul>
+
+        <h2>What a VPN is genuinely good for</h2>
+        <p>On public Wi-Fi — cafés, airports, hotels — a VPN protects your traffic from others on the same network and from a network operator you have no reason to trust. It stops your own provider from building a profile of the sites you visit. It lets you appear in another country, which can be handy when a service you pay for behaves differently while you travel. And it gives you a clean, unblocked IP address when yours has been caught in someone else's ban — a common side effect of how <a href="#/ip-geolocation-explained">IP location and blocking databases</a> work.</p>
+
+        <h2>What it will not do</h2>
+        <p>A VPN will not make you anonymous, will not remove malware, will not stop phishing, and will not hide your activity from a service you are logged into. Marketing that promises total invisibility is selling a feeling, not a feature. Think of a VPN as a privacy tool with a specific, real job: hiding your IP address and traffic contents from the networks between you and your destination.</p>
+
+        <h2>Choosing one, and the free VPN question</h2>
+        <p>Running servers around the world costs money, so ask how a free VPN pays for itself. The honest ones are limited trials of a paid product; the dishonest ones have historically paid the bills with advertising injected into pages, or worse, by selling browsing data — the exact thing you installed it to protect. If you use a VPN at all, a reputable paid service with a clear no-logs policy, a kill switch and full IPv6 support is the safer default. Pay monthly at first, test it with the <a href="#/">IP checker</a> to confirm your address and location really change, and cancel if they do not.</p>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="#/how-to-change-your-ip-address">How to Change Your IP Address</a></li>
+            <li><a href="#/ip-geolocation-explained">How Websites Know Your Location from Your IP</a></li>
+            <li><a href="#/ipv4-vs-ipv6">IPv4 vs IPv6: What Is the Difference?</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- ================= ARTICLE 5 ================= -->
+      <main class="page" id="page-ip-geolocation-explained">
+        <p class="crumb"><a href="#/articles">Articles</a> / Privacy</p>
+        <h1>How Websites Know Your Location from Your IP</h1>
+        <p class="article-meta">Why sites greet you with the right country, the wrong city, and never your street.</p>
+
+        <p>You have probably noticed it: a shop website that opens in your currency, a streaming service that knows which country you are in, a weather page that loads a forecast for a city near you — all before you typed anything or allowed location access. In most cases, the site worked it out from your <a href="#/what-is-an-ip-address">IP address</a>. The technique is called IP geolocation, and it is cleverer and cruder than most people expect, at the same time.</p>
+
+        <h2>There is no GPS inside an IP address</h2>
+        <p>An IP address is just a number; it carries no coordinates. Geolocation works because of bookkeeping. Internet addresses are handed out in large blocks to providers and organisations, and those allocations are recorded in public registries. On top of that foundation, specialist companies build databases that map every address range to the place it is believed to be used — a country, a region, a city, and an approximate latitude and longitude.</p>
+        <p>Those companies refine their maps with extra clues: where providers say their infrastructure sits, measurements from test servers that time how long packets take to reach an address, and data partnerships with apps and websites that already know where their users are. When you look up <a href="#/">your own IP address</a> on this site, the city and coordinates shown come from exactly this kind of database.</p>
+
+        <h2>How accurate is it, really?</h2>
+        <p>At country level, very accurate — well above 95 percent, because address blocks are registered to providers operating in a specific country. At city level, it is a reasonable guess: often right, sometimes off by a suburb, occasionally off by hundreds of kilometres. The coordinates in a database are usually the centre of the area the address range serves, or the location of your provider's nearest hub — not your house, and not meant to be.</p>
+        <p>That last point deserves emphasis, because it worries people: <strong>an IP address cannot reveal your street address.</strong> The databases do not have it, and the technology has no way to work it out. Only your provider can connect an address to a customer's home, and that record is not public.</p>
+
+        <h2>Why the city is sometimes wrong</h2>
+        <ul>
+          <li><strong>Provider hubs:</strong> many providers route whole regions through one big city. The database sees the hub, so everyone in the region appears to live there.</li>
+          <li><strong>Recycled addresses:</strong> addresses are reused as customers come and go, and a range that moved to a new area may still be listed in the old one until the databases catch up. This is also why <a href="#/how-to-change-your-ip-address">changing your IP address</a> can shift your apparent location.</li>
+          <li><strong>Mobile networks:</strong> phone traffic often exits to the internet through a small number of national gateways, so a mobile connection can appear to be in a city far from the phone itself.</li>
+          <li><strong>VPNs and proxies:</strong> if your traffic leaves through a server elsewhere, the database correctly reports that server's location — which is the point, as our <a href="#/what-is-a-vpn">VPN guide</a> explains.</li>
+        </ul>
+
+        <h2>IP location is not the only signal</h2>
+        <p>Websites combine several hints. If you ever clicked "allow" on a browser location prompt, the site may get a far more precise position from your device's GPS, Wi-Fi networks or mobile signal — that is a separate system with its own permission controls, and it is genuinely accurate. Language settings, time zone, currency history and account details all nudge the guess as well. IP geolocation is simply the one signal a site always has, from the very first packet, before you click or allow anything.</p>
+
+        <h2>Why websites bother</h2>
+        <p>Most uses are mundane: showing the right language, currency and prices, applying local taxes, offering the nearest store's stock, and honouring licensing rules that make some content available in one country and not another. Advertisers use it to avoid selling winter tyres in a heatwave, and security systems use it as one risk signal — a login from your usual country looks normal; one from the far side of the world, five minutes later, does not.</p>
+
+        <h2>Can you change what sites see?</h2>
+        <p>Yes. Because the location comes from the address, anything that changes the address changes the location. A <a href="#/what-is-a-vpn">VPN</a> makes you appear wherever its server is. A new address from your provider may land in a slightly different area. And if a site has your location badly wrong in a way that matters — wrong prices, wrong catalogue — checking your IP and its estimated location on <a href="#/">our homepage</a> is the quickest way to confirm the cause before you blame the site.</p>
+
+        <div class="related">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="#/what-is-an-ip-address">What Is an IP Address? A Simple Explanation</a></li>
+            <li><a href="#/what-is-a-vpn">What Is a VPN and Does It Hide Your IP?</a></li>
+            <li><a href="#/how-to-change-your-ip-address">How to Change Your IP Address</a></li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- ================= FAQ PAGE ================= -->
+      <main class="page" id="page-faq">
+        <h1>Frequently Asked Questions</h1>
+        <p class="lede">Quick answers to the questions people ask most about IP addresses. For the longer explanations, see our <a href="#/articles">articles</a>.</p>
+        <div id="faq-list-full"></div>
+      </main>
+
+      <!-- ================= ABOUT ================= -->
+      <main class="page" id="page-about">
+        <h1>About WhatIsMyIPHub</h1>
+        <p>WhatIsMyIPHub is a small, single-purpose website: it tells you your public IP address, and then it teaches you what that actually means. The tool on the <a href="#/">homepage</a> runs entirely in your browser. When the page loads, your browser asks public IP detection services for the address of the connection you are using, and the result is displayed on your screen. Nothing is typed in, nothing is uploaded, and there is no account to create.</p>
+        <p>The guides exist because an IP address on its own is just a number. Knowing <a href="#/what-is-an-ip-address">what an IP address is</a>, why there are <a href="#/ipv4-vs-ipv6">two versions of it</a>, and <a href="#/ip-geolocation-explained">how websites turn it into a rough location</a> makes you harder to confuse, harder to scare and harder to sell unnecessary products to. Every article here is written in plain English, on purpose, and each one answers the question in its title without padding.</p>
+        <h2>How the tool works</h2>
+        <p>Your browser contacts a well-known IP detection service, which simply reports back the address it sees — the same address every website sees when you connect. We use more than one service so that if one is down, another can answer, and if none of them can be reached, the tool says so honestly rather than guessing. The location, provider and timezone details come from the same services' databases, and they are estimates: usually right about the country, approximate about the city, and never about your exact address.</p>
+        <h2>What this site is not</h2>
+        <p>WhatIsMyIPHub cannot look up other people's IP addresses, cannot trace an address to a person, and cannot tell you anything about a connection you are not currently using. Any website that promises to find a person's name or home address from an IP is promising something that is not possible from public data. If you have a question the site does not answer, you can reach us through the <a href="#/contact">contact page</a>.</p>
+      </main>
+
+      <!-- ================= CONTACT ================= -->
+      <main class="page" id="page-contact">
+        <h1>Contact</h1>
+        <p>The easiest way to reach us is by email:</p>
+        <p style="font-size:1.15rem"><a href="mailto:contact@checkmyiphub.github.io">contact@checkmyiphub.github.io</a></p>
+        <p>We read messages about mistakes in the guides, problems with the tool, and suggestions for new articles. If the tool shows the wrong city for your connection, that is usually a database estimate rather than a fault — our guide to <a href="#/ip-geolocation-explained">how websites know your location from your IP</a> explains why it happens — but reports of genuinely wrong results are still welcome, because they help us choose better data sources.</p>
+        <p>Please do not send us anyone's IP address and ask us to identify them: that is not something an IP address can do, and it is not a service we offer. For questions about how this site handles information, see the <a href="#/privacy">privacy policy</a>.</p>
+      </main>
+
+      <!-- ================= PRIVACY ================= -->
+      <main class="page" id="page-privacy">
+        <h1>Privacy Policy</h1>
+        <p class="article-meta">Last updated: 2026</p>
+        <p>This page explains, in plain language, what happens to information when you use WhatIsMyIPHub.</p>
+        <h2>The IP lookup tool</h2>
+        <p>The tool runs in your browser. To show your IP address, your browser contacts third-party IP detection services (such as ipapi.co, ipwho.is and ipify). Those services necessarily see your IP address — that is how the lookup works — and their own privacy policies govern what they do with it. WhatIsMyIPHub itself operates no server and no database for this tool: your result is displayed on your device and is not sent to us or stored by us.</p>
+        <h2>What we collect</h2>
+        <p>This is a static website. We do not run user accounts, we do not set our own tracking cookies, and we do not collect names, email addresses or IP addresses from visitors. If you email us, we receive the address and content of your email, and we use them only to reply.</p>
+        <h2>Hosting and third parties</h2>
+        <p>The site is hosted on GitHub Pages, and the fonts and IP lookup services are provided by third parties. Those providers may process technical information such as your IP address and browser details as part of delivering their services, under their own privacy policies. We do not control that processing.</p>
+        <h2>Your choices</h2>
+        <p>If you do not want your browser to contact the lookup services, simply do not open the homepage tool; the <a href="#/articles">articles</a> and other pages work without it. You can also block the services in your browser or firewall, in which case the tool will show an error message instead of a result.</p>
+        <h2>Changes to this policy</h2>
+        <p>If this policy changes, the new version will be published on this page with an updated date. Questions about privacy can be sent through the <a href="#/contact">contact page</a>.</p>
+      </main>
+
+      <!-- ================= TERMS ================= -->
+      <main class="page" id="page-terms">
+        <h1>Terms of Use</h1>
+        <p class="article-meta">Last updated: 2026</p>
+        <p>By using WhatIsMyIPHub, you agree to these terms. They are short, because the site is simple.</p>
+        <h2>The service</h2>
+        <p>WhatIsMyIPHub provides a free tool that displays the public IP address and related connection details of the device you are using, together with educational articles about IP addresses and online privacy. The tool relies on third-party services, so we cannot guarantee it will always be available or always able to return a result.</p>
+        <h2>Accuracy</h2>
+        <p>IP-based location, provider and timezone information is estimated by third-party databases and may be incomplete or out of date. It is provided for general information only and should not be relied on for legal, security or emergency purposes. The articles are educational content, not professional advice.</p>
+        <h2>Acceptable use</h2>
+        <p>You agree not to use this site to attempt to identify, track or harass any person, and not to misrepresent the approximate information it shows as an exact location. You also agree not to disrupt the site or the third-party services it depends on.</p>
+        <h2>Liability</h2>
+        <p>The site is provided "as is" without warranties of any kind. To the extent permitted by law, we are not liable for any loss arising from reliance on the tool's results or the articles' content.</p>
+        <h2>Changes</h2>
+        <p>We may update these terms from time to time; the current version will always be on this page. Questions can be sent through the <a href="#/contact">contact page</a>.</p>
+      </main>
+
+      <!-- ================= DISCLAIMER ================= -->
+      <main class="page" id="page-disclaimer">
+        <h1>Disclaimer</h1>
+        <p>The information on WhatIsMyIPHub is provided for general educational purposes only. IP address details shown by the tool — including location, provider and timezone — come from third-party databases and are approximations. A location derived from an IP address typically identifies a country and an approximate city area; it never identifies a street address or a person, and it can sometimes be wrong.</p>
+        <p>Nothing on this site is legal, security or professional advice, and nothing here should be used to attempt to locate or identify any individual. WhatIsMyIPHub is an independent website and is not affiliated with any internet service provider, VPN company or the third-party lookup services the tool contacts. Product categories mentioned in our articles, such as VPNs, are discussed in general terms; we do not guarantee the behaviour of any third-party product or service.</p>
+        <p>If you believe any content on this site is inaccurate, please let us know through the <a href="#/contact">contact page</a> and we will review it.</p>
+      </main>
+
+    </div>
+
+    <footer>
+      <div class="footer-in">
+        <nav aria-label="Footer navigation">
+          <a href="#/">Home</a>
+          <a href="#/articles">Articles</a>
+          <a href="#/faq">FAQ</a>
+          <a href="#/about">About</a>
+          <a href="#/contact">Contact</a>
+          <a href="#/privacy">Privacy Policy</a>
+          <a href="#/terms">Terms</a>
+          <a href="#/disclaimer">Disclaimer</a>
+        </nav>
+        <p class="copy">© 2026 WhatIsMyIPHub</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- FAQ data (also used for the JSON-LD on this page) ---------- */
+        var FAQS = [
+          { q: "What is my IP address?", a: "Your IP address is the public number your internet connection uses to communicate with websites and online services. The tool at the top of this page shows your current public IP address the moment the page loads, along with your approximate location and internet provider." },
+          { q: "Is my IP address permanent?", a: "Usually not. Most home connections use a dynamic IP address that your provider can change at any time, for example when your router restarts or its lease expires. A static IP address, which never changes, is normally a paid extra aimed at businesses." },
+          { q: "Can someone find my exact home address from my IP address?", a: "No. An IP address can usually be traced to a country and often a city or district, but it does not reveal your street address, your name or who you are. Only your internet provider can match an IP address to a customer account, and it only does so for valid legal requests." },
+          { q: "What is the difference between a public and a private IP address?", a: "Your public IP address is the one the internet sees; it belongs to your router or connection and is shared by every device in your home. Private IP addresses are used inside your home network so your router can tell your phone, laptop and TV apart. Private addresses are not reachable from the internet." },
+          { q: "Does my IP address change when I travel?", a: "Yes. Your IP address belongs to the network you are connected to, not to your device. Connect from a hotel, a café or another country and you will get a different IP address from that network's provider." },
+          { q: "Can two devices share the same IP address?", a: "Yes, and it happens in almost every home. All of your devices share one public IP address through your router, which translates between that address and each device's private address. This technique is called NAT." },
+          { q: "What is IPv6, and do I have it?", a: "IPv6 is the newer version of the IP address system, created because the older IPv4 ran out of room. IPv6 addresses are longer and written in hexadecimal. Many providers now give customers both an IPv4 and an IPv6 address; if your connection has IPv6, this tool will show it." },
+          { q: "Does a VPN really hide my IP address?", a: "From the websites you visit, yes. When a VPN is connected, websites see the VPN server's IP address instead of yours. Your own provider can still see that you are connected to a VPN, though not which sites you visit through it." },
+          { q: "Why does a website show me in the wrong city?", a: "IP location is an estimate based on databases that map address ranges to places. Your provider may route your connection through a hub in another city, or the database may be out of date, so the city shown can be tens or even hundreds of kilometres from where you actually are." },
+          { q: "Is it safe to share my IP address publicly?", a: "An IP address on its own reveals little: a rough location and the name of your provider. Still, it is sensible not to post it publicly, because it can be used to target your connection with unwanted traffic. If you ever need a fresh one, restarting your router will usually get you a different address." }
+        ];
+
+        function buildFaq(containerId, limit) {
+          var box = document.getElementById(containerId);
+          if (!box) return;
+          var items = limit ? FAQS.slice(0, limit) : FAQS;
+          var html = "";
+          items.forEach(function (f) {
+            html += '<details class="faq"><summary>' + f.q + '</summary><div class="a"><p>' + f.a + "</p></div></details>";
+          });
+          box.innerHTML = html;
+        }
+        buildFaq("faq-list-home", 5);
+        buildFaq("faq-list-full", 0);
+
+        /* ---------- Hash router ---------- */
+        var ROUTES = {
+          "": "home",
+          "articles": "articles",
+          "what-is-an-ip-address": "what-is-an-ip-address",
+          "ipv4-vs-ipv6": "ipv4-vs-ipv6",
+          "how-to-change-your-ip-address": "how-to-change-your-ip-address",
+          "what-is-a-vpn": "what-is-a-vpn",
+          "ip-geolocation-explained": "ip-geolocation-explained",
+          "faq": "faq",
+          "about": "about",
+          "contact": "contact",
+          "privacy": "privacy",
+          "terms": "terms",
+          "disclaimer": "disclaimer"
+        };
+        var TITLES = {
+          "home": "What Is My IP Address? — WhatIsMyIPHub",
+          "articles": "Articles — WhatIsMyIPHub",
+          "what-is-an-ip-address": "What Is an IP Address? A Simple Explanation — WhatIsMyIPHub",
+          "ipv4-vs-ipv6": "IPv4 vs IPv6: What Is the Difference? — WhatIsMyIPHub",
+          "how-to-change-your-ip-address": "How to Change Your IP Address — WhatIsMyIPHub",
+          "what-is-a-vpn": "What Is a VPN and Does It Hide Your IP? — WhatIsMyIPHub",
+          "ip-geolocation-explained": "How Websites Know Your Location from Your IP — WhatIsMyIPHub",
+          "faq": "Frequently Asked Questions — WhatIsMyIPHub",
+          "about": "About — WhatIsMyIPHub",
+          "contact": "Contact — WhatIsMyIPHub",
+          "privacy": "Privacy Policy — WhatIsMyIPHub",
+          "terms": "Terms of Use — WhatIsMyIPHub",
+          "disclaimer": "Disclaimer — WhatIsMyIPHub"
+        };
+        var NAV_FOR = {
+          "home": "home", "articles": "articles",
+          "what-is-an-ip-address": "articles", "ipv4-vs-ipv6": "articles",
+          "how-to-change-your-ip-address": "articles", "what-is-a-vpn": "articles",
+          "ip-geolocation-explained": "articles",
+          "faq": "faq", "about": "about", "contact": "contact",
+          "privacy": "", "terms": "", "disclaimer": ""
+        };
+
+        function currentRoute() {
+          var h = window.location.hash.replace(/^#\/?/, "").split("?")[0];
+          return Object.prototype.hasOwnProperty.call(ROUTES, h) ? ROUTES[h] : "home";
+        }
+
+        function render() {
+          var route = currentRoute();
+          var pages = document.querySelectorAll(".page");
+          for (var i = 0; i < pages.length; i++) {
+            pages[i].classList.toggle("visible", pages[i].id === "page-" + route);
+          }
+          var navKey = NAV_FOR[route] || "";
+          var links = document.querySelectorAll("[data-nav]");
+          for (var j = 0; j < links.length; j++) {
+            links[j].classList.toggle("active", links[j].getAttribute("data-nav") === navKey);
+          }
+          document.title = TITLES[route] || TITLES.home;
+          window.scrollTo(0, 0);
+        }
+        window.addEventListener("hashchange", render);
+
+        /* ---------- IP lookup tool ---------- */
+        var elLoading = document.getElementById("tool-loading");
+        var elResult = document.getElementById("tool-result");
+        var elError = document.getElementById("tool-error");
+        var elMain = document.getElementById("ip-main");
+        var elVersion = document.getElementById("ip-version");
+        var elDetails = document.getElementById("ip-details");
+        var elCopyNote = document.getElementById("copy-note");
+        var currentIP = "";
+
+        function fetchJSON(url, timeoutMs) {
+          return new Promise(function (resolve, reject) {
+            var done = false;
+            var timer = setTimeout(function () {
+              if (!done) { done = true; reject(new Error("timeout")); }
+            }, timeoutMs);
+            fetch(url, { headers: { "Accept": "application/json" } })
+              .then(function (r) {
+                if (!r.ok) throw new Error("HTTP " + r.status);
+                return r.json();
+              })
+              .then(function (data) {
+                if (!done) { done = true; clearTimeout(timer); resolve(data); }
+              })
+              .catch(function (err) {
+                if (!done) { done = true; clearTimeout(timer); reject(err); }
+              });
+          });
+        }
+
+        function isIPv6(ip) { return ip && ip.indexOf(":") !== -1; }
+
+        function normaliseFromIpapi(d) {
+          if (!d || !d.ip) return null;
+          return {
+            ip: d.ip,
+            version: d.version || (isIPv6(d.ip) ? "IPv6" : "IPv4"),
+            city: d.city || "",
+            region: d.region || "",
+            country: d.country_name || d.country || "",
+            org: d.org || "",
+            asn: d.asn || "",
+            timezone: d.timezone || "",
+            lat: (typeof d.latitude === "number") ? d.latitude : null,
+            lon: (typeof d.longitude === "number") ? d.longitude : null
+          };
+        }
+
+        function normaliseFromIpwho(d) {
+          if (!d || !d.ip || d.success === false) return null;
+          var conn = d.connection || {};
+          var tz = d.timezone || {};
+          return {
+            ip: d.ip,
+            version: d.type || (isIPv6(d.ip) ? "IPv6" : "IPv4"),
+            city: d.city || "",
+            region: d.region || "",
+            country: d.country || "",
+            org: conn.org || conn.isp || "",
+            asn: conn.asn ? ("AS" + conn.asn) : "",
+            timezone: tz.id || "",
+            lat: (typeof d.latitude === "number") ? d.latitude : null,
+            lon: (typeof d.longitude === "number") ? d.longitude : null
+          };
+        }
+
+        function addRow(label, value, mono) {
+          if (value === null || value === undefined || value === "") return "";
+          return '<div class="row"><dt>' + label + '</dt><dd' + (mono ? ' class="mono"' : "") + ">" + value + "</dd></div>";
+        }
+
+        function escapeHtml(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+          });
+        }
+
+        function showResult(info, extraV6) {
+          currentIP = info.ip;
+          elLoading.hidden = true;
+          elError.hidden = true;
+          elResult.hidden = false;
+          elCopyNote.textContent = "";
+          elMain.textContent = info.ip;
+          elVersion.textContent = info.version + " address" + (info.version === "IPv6" ? " — your connection is using the newer IPv6 format." : " — your connection is using the classic IPv4 format.");
+
+          var html = "";
+          if (extraV6 && extraV6 !== info.ip) {
+            html += addRow(isIPv6(info.ip) ? "IPv4 address" : "IPv6 address", escapeHtml(extraV6), true);
+          }
+          html += addRow("City", escapeHtml(info.city));
+          html += addRow("Region", escapeHtml(info.region));
+          html += addRow("Country", escapeHtml(info.country));
+          html += addRow("ISP / Organisation", escapeHtml(info.org));
+          html += addRow("ASN", escapeHtml(info.asn), true);
+          html += addRow("Timezone", escapeHtml(info.timezone));
+          if (info.lat !== null && info.lon !== null) {
+            html += addRow("Approximate coordinates", info.lat.toFixed(4) + ", " + info.lon.toFixed(4), true);
+          }
+          elDetails.innerHTML = html;
+        }
+
+        function showError() {
+          elLoading.hidden = true;
+          elResult.hidden = true;
+          elError.hidden = false;
+        }
+
+        function detectAltStack(mainIp) {
+          /* Best effort: api64 returns an IPv6 address when the connection has one. */
+          return fetchJSON("https://api64.ipify.org?format=json", 4000)
+            .then(function (d) {
+              if (d && d.ip && d.ip !== mainIp && isIPv6(d.ip) !== isIPv6(mainIp)) return d.ip;
+              return null;
+            })
+            .catch(function () { return null; });
+        }
+
+        function lookup() {
+          elLoading.hidden = false;
+          elResult.hidden = true;
+          elError.hidden = true;
+
+          fetchJSON("https://ipapi.co/json/", 8000)
+            .then(function (d) {
+              var info = normaliseFromIpapi(d);
+              if (!info) throw new Error("bad data");
+              return info;
+            })
+            .catch(function () {
+              return fetchJSON("https://ipwho.is/", 8000).then(function (d) {
+                var info = normaliseFromIpwho(d);
+                if (!info) throw new Error("bad data");
+                return info;
+              });
+            })
+            .then(function (info) {
+              detectAltStack(info.ip).then(function (alt) {
+                showResult(info, alt);
+              });
+            })
+            .catch(function () {
+              /* Last resort: IP only, no details. */
+              fetchJSON("https://api.ipify.org?format=json", 6000)
+                .then(function (d) {
+                  if (!d || !d.ip) throw new Error("bad data");
+                  showResult({
+                    ip: d.ip,
+                    version: isIPv6(d.ip) ? "IPv6" : "IPv4",
+                    city: "", region: "", country: "", org: "", asn: "",
+                    timezone: "", lat: null, lon: null
+                  }, null);
+                })
+                .catch(showError);
+            });
+        }
+
+        document.getElementById("btn-refresh").addEventListener("click", lookup);
+        document.getElementById("btn-retry").addEventListener("click", lookup);
+        document.getElementById("btn-copy").addEventListener("click", function () {
+          if (!currentIP) return;
+          function done() { elCopyNote.textContent = "Copied: " + currentIP; }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(currentIP).then(done).catch(function () { fallbackCopy(); });
+          } else {
+            fallbackCopy();
+          }
+          function fallbackCopy() {
+            var ta = document.createElement("textarea");
+            ta.value = currentIP;
+            ta.style.position = "fixed"; ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); done(); }
+            catch (e) { elCopyNote.textContent = "Copy failed — your IP address is shown above."; }
+            document.body.removeChild(ta);
+          }
+        });
+
+        render();
+        lookup();
+      })();
+    </script>
+  </body>
+</html>
